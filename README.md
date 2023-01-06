@@ -25,6 +25,9 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 ## GitHub Repository
 https://github.com/sarahlang9800/note-taker
 
+## Link to Deployed Application
+https://sarah-lang-note-taker.herokuapp.com/
+
 ## Example Photo 
 ![Note Taker Example Picture](./img/Note-Taker-Example-Picture.png)
 
