@@ -11,21 +11,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // GET route for notes page
-app.get('/api/notes', (req, res) => res.sendFile(path.join(__dirname, './Develope/db', 'db.json')));
+app.get('/api/notes', (req, res) => res.sendFile(path.join(__dirname, './db', 'db.json')));
 
 // GET route for homepage
-app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './Develope/public', 'notes.html')));
+app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public', 'notes.html')));
 
 app.post('/api/notes', (req, res) => {
     let newNote = req.body;
-    let noteList = JSON.parse(fs.readFileSync('./Develop/db.json', 'utf8'));
+    let noteList = JSON.parse(fs.readFileSync('./db.json', 'utf8'));
     let notelength = (noteList.length).toString();
 
     newNote.id = notelength;
     noteList.push(newNote);
     
-    fs.writeFileSync('./Develop/db.json', JSON.stringify(noteList));
+    fs.writeFileSync('./db.json', JSON.stringify(noteList));
     res.json(noteList);
 })
 
-app.listen(PORT);``
+app.listen(PORT);
